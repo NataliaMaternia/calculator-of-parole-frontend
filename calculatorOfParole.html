@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator warunkowego przedterminowego zwolnienia</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body background="lady-justice-5126700_1280.png">
+    <div class="container">
+      <h1>Oblicz datę warunkowego przedterminowego zwolnienia</h1>
+      <form id="calculationForm">
+        <p>
+          Zaznacz
+          <img src="checkbox_icon.jpg" alt="checkbox" class="checkbox-size" />
+          jeśli skazany spełnia określone warunki:
+        </p>
+
+        <label for="recidivismBasic"
+          >Skazanie nastąpiło w warunkach recydywy podstawowej:
+          <input type="checkbox" id="recidivismBasic" name="recidivismBasic"
+        /></label>
+
+        <label for="recidivismMultiple"
+          >Skazanie nastąpiło w warunkach recydywy wielokrotnej:
+          <input
+            type="checkbox"
+            id="recidivismMultiple"
+            name="recidivismMultiple"
+        /></label>
+
+        <label for="recidivismHinder"
+          >Wobec skazanego wydano prawomocne postanowienie stwierdzające, że
+          bezprawnie utrudniał wykonanie kary pozbawienia wolności:
+          <input type="checkbox" id="recidivismHinder" name="recidivismHinder"
+        /></label>
+
+        <label for="lifeImprisonment" class="lifeImprisonment-font">
+          Wobec skazanego została orzeczona kara dożywotniego pozbawienia
+          wolności:
+          <input
+            type="checkbox"
+            id="lifeImprisonment"
+            name="lifeImprisonment"
+          />
+        </label>
+
+        <label for="imprisonmentJudgmentYears"
+          >Wobec skazanego została orzeczona kara
+          <input
+            type="number"
+            min="0"
+            max="30"
+            id="imprisonmentJudgmentYears"
+            name="imprisonmentJudgmentYears"
+            required
+          />
+          lat i
+          <input
+            type="number"
+            min="0"
+            max="12"
+            id="imprisonmentJudgmentMonths"
+            name="imprisonmentJudgmentMonths"
+            required
+          />
+          miesięcy pozbawienia wolności
+        </label>
+
+        <label for="firstDayInPrison"
+          >Skazany rozpoczął wykonywanie kary pozbawienia wolności w
+          dniu:</label
+        >
+        <input
+          type="date"
+          id="firstDayInPrison"
+          name="firstDayInPrison"
+          required
+        />
+
+        <button type="submit">Oblicz</button>
+      </form>
+      <div id="result">
+        <h2>Sąd może warunkowo zwolnić skazanego z odbycia reszty kary w dniu:</h2>
+        <p id="summary"></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
